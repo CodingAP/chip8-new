@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chip-8 Emulator</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="canvas" width="640" height="320" style="border: 1px solid black;"></canvas>
+        <p class="rom">Load ROM: <input type="file" name="romloader" id="files"></p>
+        <p class="fpicker">Foreground Color: <input id="fpicker" value="#FFFFFF" type="color" name="picker"></p>
+        <p class="bpicker">Background Color: <input id="bpicker" value="#000000" type="color" name="picker"></p>
+        <p class="slider">Speed Slider: <input type="range" value="60" min="1" max="500" step="1" id="speed">
+            <input type="button" id="reset" value="Reset">
+            <input type="button" id="pause" value="Pause">
+        </p>
+        <table id="keys">
+            <tr>
+                <td id="k1">1</td>
+                <td id="k2">2</td>
+                <td id="k3">3</td>
+                <td id="kc">C</td>
+            </tr>
+            <tr>
+                <td id="k4">4</td>
+                <td id="k5">5</td>
+                <td id="k6">6</td>
+                <td id="kd">D</td>
+            </tr>
+            <tr>
+                <td id="k7">7</td>
+                <td id="k8">8</td>
+                <td id="k9">9</td>
+                <td id="ke">E</td>
+            </tr>
+            <tr>
+                <td id="ka">A</td>
+                <td id="k0">0</td>
+                <td id="kb">B</td>
+                <td id="kf">F</td>
+            </tr>
+        </table>
+        <table id="registers">
+            <tr>
+                <th>Register:</th>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>I</th>
+            </tr>
+            <tr>
+                <th>Hex Value: </th>
+                <td id="r0">0</td>
+                <td id="r1">0</td>
+                <td id="r2">0</td>
+                <td id="r3">0</td>
+                <td id="r4">0</td>
+                <td id="r5">0</td>
+                <td id="r6">0</td>
+                <td id="r7">0</td>
+                <td id="r8">0</td>
+                <td id="r9">0</td>
+                <td id="ra">0</td>
+                <td id="rb">0</td>
+                <td id="rc">0</td>
+                <td id="rd">0</td>
+                <td id="re">0</td>
+                <td id="rf">0</td>
+                <td id="rI">0</td>
+            </tr>
+            <tr>
+                <th>Decimal Value: </th>
+                <td id="a0">0</td>
+                <td id="a1">0</td>
+                <td id="a2">0</td>
+                <td id="a3">0</td>
+                <td id="a4">0</td>
+                <td id="a5">0</td>
+                <td id="a6">0</td>
+                <td id="a7">0</td>
+                <td id="a8">0</td>
+                <td id="a9">0</td>
+                <td id="aa">0</td>
+                <td id="ab">0</td>
+                <td id="ac">0</td>
+                <td id="ad">0</td>
+                <td id="ae">0</td>
+                <td id="af">0</td>
+                <td id="aI">0</td>
+            </tr>
+        </table>
+        <p class="setting1">Current Program On/Off: <input id="ponoff" type="checkbox"></p>
+        <p class="setting2">Disassembled Program On/Off: <input id="donoff" type="checkbox"></p>
+        <p class="disassembler">Current Program: <textarea readonly="true" id="program"></textarea></p>
+        <p class="disassembler">Disassembled Program: <textarea readonly="true" id="dprogram"></textarea></p>
+    </div>
+    <script src="classes.js"></script>
+    <script src="index.js"></script>
+    <script src="events.js"></script>
+</body>
+
+</html>
